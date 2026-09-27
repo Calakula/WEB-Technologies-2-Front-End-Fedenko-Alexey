@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Task 2 — Component library, built with Flexbox only.
+   No Grid, no floats, no fixed widths/heights for layout.
+   ========================================================================== */
+
+.lib-section { margin-bottom: var(--space-5); }
+
+/* ---------- 1. Navbar --------------------------------------------------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;                 /* survives very long link lists */
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  box-shadow: var(--shadow);
+}
+.navbar__logo { font-weight: 700; font-size: 1.15em; }
+.navbar__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  flex: 1 1 auto;                  /* takes the middle space */
+}
+.navbar__links a { text-decoration: none; color: var(--color-ink); }
+.navbar__links a:hover { color: var(--color-primary); }
+.navbar__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-left: auto;               /* pins the button group to the right edge */
+  flex-shrink: 0;
+}
+
+/* ---------- 2. Card row -------------------------------------------------- */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: stretch;            /* equal height cards, no fixed height */
+}
+.card {
+  flex: 1 1 260px;                 /* grows/shrinks, wraps on narrow screens */
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: var(--shadow);
+}
+.card p { flex: 1 1 auto; }        /* pushes footers to a common baseline */
+.card__footer { margin-top: var(--space-2); display: flex; }
+
+/* ---------- 3. Pagination ------------------------------------------------ */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;                 /* wraps on narrow screens, as required */
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  position: relative;
+}
+.pagination__arrow {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+}
+.pagination__pages {
+  display: flex;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pagination__pages a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2em;
+  padding: var(--space-1);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-ink);
+}
+.pagination__pages a.is-active { background: var(--color-primary); color: #fff; }
+.pagination__count {
+  margin-left: auto;               /* right edge on wide screens */
+  color: var(--color-muted);
+  font-size: 0.9em;
+}
+
+/* ---------- 4. Comment block --------------------------------------------- */
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: var(--shadow);
+}
+.comment__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  flex-shrink: 0;                  /* avatar keeps its own size, text wraps beside it */
+  object-fit: cover;
+}
+.comment__body { flex: 1 1 auto; min-width: 0; }
+.comment__author { font-weight: 700; color: var(--color-ink); margin-bottom: var(--space-1); }
+.comment__text { margin: 0; }
+
+/* ---------- 5. Pricing table ---------------------------------------------- */
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;           /* recommended plan naturally sits taller */
+  gap: var(--space-3);
+}
+.plan {
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-3);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.plan__price { font-size: 1.6em; font-weight: 700; color: var(--color-ink); }
+.plan__price span { font-size: 0.5em; color: var(--color-muted); font-weight: 400; }
+.plan__features { list-style: none; margin: 0; padding: 0; flex: 1 1 auto; }
+.plan__features li { padding: var(--space-1) 0; border-top: 1px solid var(--color-border); }
+.plan__features li:first-child { border-top: none; }
+
+.plan--recommended {
+  border-color: var(--color-primary);
+  padding-top: var(--space-5);     /* extra padding = taller, no fixed height */
+  padding-bottom: var(--space-5);
+  transform: translateY(calc(-1 * var(--space-2)));
+}
+.plan__badge {
+  align-self: center;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: 700;
+  padding: 0.2em 0.8em;
+  border-radius: 999px;
+  margin: 0;
+}
