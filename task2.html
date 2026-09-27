@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task 2 — Component Library (Flexbox)</title>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/task2.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="task1.html">Task 1 · Grid</a>
+    <a href="task2.html" aria-current="page">Task 2 · Flexbox</a>
+    <a href="task3.html">Task 3 · Grid + Flexbox</a>
+  </nav>
+
+  <main class="page-wrap">
+    <h1>Task 2 — Component Library</h1>
+    <p>Five components, one stylesheet, one set of colors/spacing/fonts. Everything below is built with Flexbox only.</p>
+
+    <!-- 1. Navigation bar -->
+    <section class="lib-section">
+      <h2>1 · Navigation bar</h2>
+      <header class="navbar">
+        <div class="navbar__logo">Astana&nbsp;IT</div>
+        <nav class="navbar__links">
+          <a href="#">Home</a>
+          <a href="#">Courses</a>
+          <a href="#">About the Faculty and Programs</a>
+          <a href="#">Contacts</a>
+        </nav>
+        <div class="navbar__actions">
+          <a class="btn btn-ghost" href="#">Log in</a>
+          <a class="btn btn-primary" href="#">Sign up</a>
+        </div>
+      </header>
+    </section>
+
+    <!-- 2. Card row -->
+    <section class="lib-section">
+      <h2>2 · Card row</h2>
+      <div class="card-row">
+        <article class="card">
+          <h3>Flexbox basics</h3>
+          <p>Short description.</p>
+          <div class="card__footer"><button class="btn btn-primary">Read more</button></div>
+        </article>
+        <article class="card">
+          <h3>CSS Grid in depth</h3>
+          <p>A much longer description that wraps onto several lines to prove the card grows with its content instead of clipping it or overflowing the row.</p>
+          <div class="card__footer"><button class="btn btn-primary">Read more</button></div>
+        </article>
+        <article class="card">
+          <h3>Responsive layouts</h3>
+          <p>Medium length description sitting between the two extremes above it.</p>
+          <div class="card__footer"><button class="btn btn-primary">Read more</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Pagination -->
+    <section class="lib-section">
+      <h2>3 · Pagination bar</h2>
+      <div class="pagination">
+        <button class="pagination__arrow" aria-label="Previous page">&larr;</button>
+        <ul class="pagination__pages">
+          <li><a href="#">1</a></li>
+          <li><a class="is-active" href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+        </ul>
+        <button class="pagination__arrow" aria-label="Next page">&rarr;</button>
+        <span class="pagination__count">128 results</span>
+      </div>
+    </section>
+
+    <!-- 4. Comment block -->
+    <section class="lib-section">
+      <h2>4 · Comment block</h2>
+      <div class="comment">
+        <img class="comment__avatar" src="https://i.pravatar.cc/80?img=12" alt="User avatar">
+        <div class="comment__body">
+          <p class="comment__author">Aliya K.</p>
+          <p class="comment__text">This is a much longer comment written to check that the text wraps neatly beside the avatar and never slides underneath it, no matter how many lines it ends up taking on a narrow screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Pricing table -->
+    <section class="lib-section">
+      <h2>5 · Pricing table</h2>
+      <div class="pricing">
+        <article class="plan">
+          <h3>Basic</h3>
+          <p class="plan__price">$9<span>/mo</span></p>
+          <ul class="plan__features">
+            <li>1 project</li>
+            <li>Community support</li>
+          </ul>
+          <button class="btn btn-ghost">Choose Basic</button>
+        </article>
+        <article class="plan plan--recommended">
+          <p class="plan__badge">Most popular</p>
+          <h3>Pro</h3>
+          <p class="plan__price">$29<span>/mo</span></p>
+          <ul class="plan__features">
+            <li>Unlimited projects</li>
+            <li>Priority support</li>
+            <li>Team collaboration</li>
+            <li>Advanced analytics</li>
+          </ul>
+          <button class="btn btn-primary">Choose Pro</button>
+        </article>
+        <article class="plan">
+          <h3>Enterprise</h3>
+          <p class="plan__price">$79<span>/mo</span></p>
+          <ul class="plan__features">
+            <li>Everything in Pro</li>
+            <li>Dedicated manager</li>
+          </ul>
+          <button class="btn btn-ghost">Choose Enterprise</button>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
