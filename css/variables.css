@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Shared design tokens — used by every task so the whole assignment
+   reads as one consistent piece of work, not three separate exercises.
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --color-ink: #14151a;
+  --color-paper: #faf9f6;
+  --color-surface: #ffffff;
+  --color-border: #e2e0da;
+  --color-muted: #6b6f76;
+
+  --color-primary: #2f5dd0;      /* blue accent (buttons, links) */
+  --color-primary-dark: #23439c;
+  --color-accent-yellow: #f0b429;
+  --color-accent-red: #c62c2c;
+
+  /* Mondrian palette for Task 1 */
+  --mondrian-blue: #1c4fd6;
+  --mondrian-yellow: #f2c200;
+  --mondrian-red: #d21f1f;
+  --mondrian-black: #111111;
+  --mondrian-white: #f2f1ec;
+
+  /* Typography */
+  --font-base: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: clamp(0.95rem, 0.85rem + 0.3vw, 1.05rem);
+  --font-size-h1: clamp(1.6rem, 1.3rem + 1.2vw, 2.4rem);
+  --font-size-h2: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+  --line-height: 1.5;
+
+  /* Spacing scale (fluid, no fixed pixel steps) */
+  --space-1: clamp(0.35rem, 0.3rem + 0.2vw, 0.5rem);
+  --space-2: clamp(0.6rem, 0.5rem + 0.4vw, 0.9rem);
+  --space-3: clamp(1rem, 0.8rem + 0.8vw, 1.6rem);
+  --space-4: clamp(1.6rem, 1.3rem + 1.2vw, 2.4rem);
+  --space-5: clamp(2.4rem, 2rem + 1.6vw, 3.6rem);
+
+  /* Radii / shadow, reused everywhere for a single visual language */
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(20, 21, 26, 0.06), 0 6px 16px rgba(20, 21, 26, 0.06);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+h1, h2, h3 { margin: 0 0 var(--space-2) 0; font-weight: 700; }
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+p { margin: 0 0 var(--space-2) 0; color: var(--color-muted); }
+
+a { color: var(--color-primary); }
+
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3);
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.site-nav a {
+  text-decoration: none;
+  color: var(--color-ink);
+  font-weight: 600;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+}
+.site-nav a[aria-current="page"],
+.site-nav a:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+.btn-primary { background: var(--color-primary); color: #fff; }
+.btn-primary:hover { background: var(--color-primary-dark); }
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-border);
+}
+.btn-ghost:hover { border-color: var(--color-primary); color: var(--color-primary); }
